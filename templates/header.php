@@ -28,14 +28,9 @@
                         >
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Fertilizantes</a>
+                        <a class="nav-link" href="#">App Agraria</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Insumos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Semmillas</a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="#">Cerrar secion</a>           
                     </li>
