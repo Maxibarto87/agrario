@@ -1,3 +1,7 @@
+<?php
+$url_base = "http://localhost/agrario/";
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -28,7 +32,7 @@
                         >
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">App Agraria</a>
+                        <a class="nav-link" href="<?php echo $url_base ?>secciones/agrario">App Agraria</a>
                     </li>
                     
                     <li class="nav-item">

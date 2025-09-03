@@ -1,5 +1,5 @@
 <?php
-
+//Se agrego conexion a la base de datos
     $dbname ="agraria";
     $servidor ="localhost";
     $user ="root";
