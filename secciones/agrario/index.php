@@ -1,5 +1,19 @@
+<?php
+require_once("../../conexion.php"); // ajusta la ruta si es distinta
+
+// Preparar consulta
+$sentencia = $conexion->prepare("SELECT * FROM ag_agropecuaria");
+
+// Ejecutar
+$sentencia->execute();
+
+// Guardar resultados
+$lista_agropecuaria = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <?php require_once("../../templates/header.php"); ?>
-Mostrar aplicacion agraria 
+
+ 
 <h1>App Agraria</h1>
 <div class="card">
     <div class="card-header">
@@ -13,8 +27,6 @@ Mostrar aplicacion agraria
     >
     </div>
     
-    
-    
     <div
         class="table-responsive"
     >
@@ -23,7 +35,7 @@ Mostrar aplicacion agraria
         >
             <thead>
                 <tr>
-                    <th scope="ID">ID</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Fertilizantes</th>
                     <th scope="col">Insumos</th>
                     <th scope="col">Semillas</th>
@@ -32,12 +44,13 @@ Mostrar aplicacion agraria
                 </tr>
             </thead>
             <tbody>
+                <?php foreach ($lista_agropecuaria as $registro) { ?>
                 <tr class="">
-                    <td scope="row">1</td>
-                    <td>urea</td>
-                    <td>raundup</td>
-                    <td>trigo</td>
-                    <td>2395411213</td>
+                    <td scope="row"><?php echo $registro['id']?></td>
+                    <td><?php echo $registro['fertilizantes']; ?></td>
+                    <td><?php echo $registro['insumos']; ?></td>
+                    <td><?php echo $registro['semillas']; ?></td>
+                    <td><?php echo $registro['telefonos']; ?></td>
                     <td>
                         <a
                         name=""
@@ -59,13 +72,11 @@ Mostrar aplicacion agraria
                      </td>
 
                 </tr>
-                
+                <?php } ?>
             </tbody>
         </table>
     </div>
     
 </div>
-
-
 
 <?php require_once("../../templates/footer.php"); ?>
