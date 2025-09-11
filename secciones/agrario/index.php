@@ -69,7 +69,7 @@ $lista_agropecuaria = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         name=""
                         id=""
                         class="btn btn-info"
-                        href="#"
+                        href="editar.php?txtID=<?php echo $registro['id']?>"
                         role="button"
                         >Editar
                         </a>
