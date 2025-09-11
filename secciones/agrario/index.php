@@ -1,4 +1,17 @@
 <?php
+if(isset($_GET['txtID']))
+{
+    $txtID = (isset($_GET['txtID']))?$_GET['txtID']:"";
+
+    require_once("../../conexion.php"); // ajusta la ruta si es distinta
+
+    // Preparar consulta
+    $sentencia = $conexion->prepare("DELETE FROM ag_agropecuaria WHERE id=:id");
+    $sentencia->bindParam(":id",$txtID);
+    $sentencia->execute();
+
+    header("Location: index.php");
+}
 require_once("../../conexion.php"); // ajusta la ruta si es distinta
 
 // Preparar consulta
@@ -65,7 +78,7 @@ $lista_agropecuaria = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         name=""
                         id=""
                         class="btn btn-danger"
-                        href="#"
+                        href="index.php?txtID=<?php echo $registro['id']?>"
                         role="button"
                         >Eliminar
                         </a>
