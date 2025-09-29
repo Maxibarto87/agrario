@@ -1,6 +1,7 @@
 <?php
 if(isset($_GET['txtID']))
 {
+    //Eliminar datos introducidos 
     $txtID = (isset($_GET['txtID']))?$_GET['txtID']:"";
 
     require_once("../../conexion.php"); // ajusta la ruta si es distinta
@@ -26,6 +27,7 @@ $lista_agropecuaria = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 <?php require_once("../../templates/header.php"); ?>
 
+ // App agraria 
  
 <h1>App Agraria</h1>
 <div class="card">

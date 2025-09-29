@@ -1,13 +1,14 @@
 <?php
 if($_POST)
 {
+    //conexion con la base de datos
     require_once("../../conexion.php");
     $ag_fertilizantes = $_POST['ag_fertilizantes'] ?? "";
     $ag_insumos      = $_POST['ag_insumos'] ?? "";
     $ag_semillas     = $_POST['ag_semillas'] ?? "";
     $ag_telefonos    = $_POST['ag_telefonos'] ?? "";
 
-    // Preparar consulta
+    // Insertar en la base de datos
     $sentencia = $conexion->prepare("INSERT INTO ag_agropecuaria 
     (fertilizantes, insumos, semillas, telefonos) 
     VALUES (:ag_fertilizantes, :ag_insumos, :ag_semillas, :ag_telefonos)");
@@ -26,6 +27,9 @@ $sentencia->bindParam(":ag_telefonos", $ag_telefonos);
 
 <?php require_once("../../templates/header.php"); ?>
  
+
+
+// Formulario para crear
 <div class="card">
     <div class="card-header">Crear formularios Agrario</div>
     <div class="card-body">

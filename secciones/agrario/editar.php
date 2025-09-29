@@ -2,6 +2,8 @@
 require_once("../../conexion.php");
 if(isset($_GET['txtID']))
 {
+
+    //Selecciona los datos introducidos con la base de datos
     $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : "";
 }
 $sentencia = $conexion->prepare("SELECT * FROM ag_agropecuaria WHERE id=:id"); 
@@ -34,6 +36,9 @@ if($_POST)
 ?>
 <?php require_once("../../templates/header.php"); ?>
     
+
+// Formulario de edición
+
 <div class="card">
     <div class="card-header">Crear formularios Agrario</div>
     
